@@ -32,17 +32,24 @@ x = r.json()
 
 # by default driving mode considered
 def getDistance():
+    
+    # Inelegant for loop to find the distance metric.
     for key in x:
         if (key == "rows"):
             
-            distance = (x[key][0]['elements'][0]['distance']['text']).split("k")
-            int(distance)
-    return distance 
+            # Formatting the string to make sure that it is acceptable as an integer.
+            distance = (x[key][0]['elements'][0]['distance']['text']).split("km")
+            distance = (str("").join(distance))
+            distance, randomHoldingString = distance.split(",")
+            distance = distance + randomHoldingString
+            distance = int(distance)
+            
+    return distance # Return the value as an integer.
 
 # Grabbing the distance from the json file as a string. This is fairly inelegant and not that great; may need to be changed later.
 
 # print the value of x
-print(x)
+# print(x)
 
 
 
