@@ -13,7 +13,17 @@ def __init__(self,passengers,carSize,mode):
     self.carSize = carSize
     self.mode = mode
 
+# Method used to retrieve the total emissions using a given distance.
+# Current only works with small cars.
+def totalEmissions(self):
+    sizeOfCar = self.carSize
+    return (Mode.sizeOfCar.estimate_co2(distance_in_km = maps.getDistance(), occupancy = self.passengers))
 
+# Method used to return the total emissions per 100 km. Recall thta 
+# this currently only works for small cars.
+def averageEmissions(self):
+    sizeOfCar = self.carSize
+    return ((Mode.sizeOfCar.estimate_co2(distance_in_km= maps.getDistance, occupancy = self.passengers))/100)
 
 # Testing the output from the function in the maps class.
 print (Mode.SMALL_CAR.estimate_co2(distance_in_km=maps.getDistance()))
