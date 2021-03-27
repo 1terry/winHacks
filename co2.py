@@ -8,11 +8,11 @@ import maps
 # Print out the total emissions for a small car in 100 kms.
 
 #change the variable to however many in the frontend
-def __init__(self,passengers,carSize,mode){
+def __init__(self,passengers,carSize,mode):
     self.passengers = passengers
     self.carSize = carSize
     self.mode = mode
-}
+
 
 
 # Testing the output from the function in the maps class.
