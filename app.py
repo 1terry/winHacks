@@ -12,6 +12,6 @@ def getInfo():
   if request.method == "POST":
     loc1 = request.form["start"]    #make name start in field
     loc2 = request.form["end"]      #make name end in field
-
+    print(loc1 + loc2)
 if __name__ == "__main__":
   app.run(debug=True)
