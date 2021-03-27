@@ -2,7 +2,7 @@
 # March 26, 2021 (11:29 pm)
 
 import requests
-import json
+import json 
 
 # enter your api key here
 key = "AIzaSyD5S_QsivrbmGtWzjs6Hp7r3YcQi5GInbE"
@@ -29,12 +29,14 @@ r= requests.get("https://maps.googleapis.com/maps/api/distancematrix/json?origin
 # json method of response object
 # return json format result
 x = r.json()
-  
+
 # by default driving mode considered
-  
+def getDistance():
+    a = 100
+    return a
+
 # print the value of x
 print(x)
-
 
 
 

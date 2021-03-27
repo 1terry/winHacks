@@ -4,8 +4,9 @@
 # Import Mode from the library
 from transport_co2 import Mode
 list(Mode)
-
+import maps
 # Print out the total emissions for a small car in 100 kms.
-print (Mode.SMALL_CAR.estimate_co2(distance_in_km=100))
+
+print (Mode.SMALL_CAR.estimate_co2(distance_in_km=maps.getDistance()))
 
 #Output: 11200.0
