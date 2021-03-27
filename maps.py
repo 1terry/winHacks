@@ -32,13 +32,14 @@ x = r.json()
 
 # by default driving mode considered
 def getDistance():
-    a = 100
-    return a
+    for key in x:
+        if (key == "rows"):
+            
+            distance = (x[key][0]['elements'][0]['distance']['text']).split("k")
+            int(distance)
+    return distance 
 
 # Grabbing the distance from the json file as a string. This is fairly inelegant and not that great; may need to be changed later.
-for key in x:
-    if (key == "rows"):
-        print (x[key][0]['elements'][0]['distance']['text'])
 
 # print the value of x
 print(x)
