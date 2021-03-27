@@ -8,6 +8,11 @@ import json
 key = "AIzaSyD5S_QsivrbmGtWzjs6Hp7r3YcQi5GInbE"
 api_key = key
   
+#constructor for source and dest
+def __init__(self, source, dest):
+    self.source = source
+    self.dest = dest
+
 # Take source as input
 
 source = "Toronto"
