@@ -4,6 +4,9 @@
 # Cleaning up the code by removing redundancies.
 # March 27, 2021 (8:23 pm)
 
+# Made sure to follow oop in newest revision.
+# March 27, 2021 (10:33 pm)
+
 from transport_co2 import Mode
 list(Mode)
 import maps
