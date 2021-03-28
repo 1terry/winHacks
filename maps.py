@@ -7,6 +7,9 @@
 # Adapted the code to work with coordinates and included some error validation (negative distance).
 # March 27, 2021 (10:06 pm)
 
+ # Full opp functionality according to python's specifications.
+ # March 27, 2021 (10:34 pm)
+
 import requests
 import json 
 

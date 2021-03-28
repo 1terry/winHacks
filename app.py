@@ -7,7 +7,6 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 def geo():
   return render_template ('index.html')
 
-
 @app.route('/postmethod', methods = ['GET', 'POST'])
 def get_post_location():
   where = request.form['location']
