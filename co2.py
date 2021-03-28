@@ -27,8 +27,7 @@ def tripEmissions(self):
 # this currently only works for small cars.
 def averageEmissions(self):
     sizeOfCar = self.carSize
-    return ((Mode.sizeOfCar.estimate_co2(distance_in_km= maps.getDistance, occupancy = self.passengers))/100)
+    return ((Mode.sizeOfCar.estimate_co2(distance_in_km= maps.getDistance(), occupancy = self.passengers))/100)
 
 def getTotalEmissions(self):
     return self.totalEmissions
-
