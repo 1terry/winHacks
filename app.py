@@ -12,7 +12,7 @@ import json
 # This method is used to handle post requests.
 @app.route('/postmethod', methods=['POST'])
 def postmethod():
-  
+
   # Grabs the json file that is provided.
   data = request.get_json()
 
