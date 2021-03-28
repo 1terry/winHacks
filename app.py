@@ -20,7 +20,7 @@ def home():
     return "<h1>Welcome to the server</h1>"
 
 
-@app.route('/post/', methods=['POST', 'GET'])
+@app.route('/post/', methods=['POST'])
 def postmethod():
 
     # Grabs the json file that is provided.
