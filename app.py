@@ -7,10 +7,12 @@
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, jsonify
 from maps import maps
 from co2 import co2
+from flask_cors import CORS
 import json
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/")
@@ -48,7 +50,7 @@ def home():
 # This method is used to handle post requests.
 
 
-@app.route('/post/', methods=['POST'])
+@app.route('/post/', methods=['POST', 'GET'])
 def postmethod():
 
     # Grabs the json file that is provided.
@@ -74,6 +76,7 @@ def postmethod():
 
     # Creating a json file to be returned.
     # return (json.dump(data, indent=3))
+
     return jsonify(response)
 
 
