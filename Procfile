@@ -1,1 +1,1 @@
-<web>: <rake jobs:work>
+web: gunicorn <app.py>:<home()>
