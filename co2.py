@@ -12,10 +12,9 @@ list(Mode)
 import maps
 
 # Constructor to call in the frontend
-def __init__(self,passengers,carSize,mode,map):
+def __init__(self,passengers,carSize,map):
     self.passengers = passengers
     self.carSize = carSize
-    self.mode = mode
     self.totalEmissions = 0
     self.map = map
 
@@ -23,7 +22,8 @@ def __init__(self,passengers,carSize,mode,map):
 # Current only works with small cars.
 def tripEmissions(self):
     sizeOfCar = self.carSize
-    tripCO2 = Mode.sizeOfCar.estimate_co2(distance_in_km = self.map.getDistance(), occupancy = self.passengers)
+    thisMap = self.map
+    tripCO2 = Mode.sizeOfCar.estimate_co2(distance_in_km = thisMap.getDistance(), occupancy = self.passengers)
     self.totalEmissions += tripCO2 
     return (tripCO2)
 
@@ -31,7 +31,8 @@ def tripEmissions(self):
 # this currently only works for small cars.
 def averageEmissions(self):
     sizeOfCar = self.carSize
-    return ((Mode.sizeOfCar.estimate_co2(distance_in_km= self.map.getDistance(), occupancy = self.passengers))/100)
+    thisMap = self.map
+    return ((Mode.sizeOfCar.estimate_co2(distance_in_km= thisMap.getDistance(), occupancy = self.passengers))/100)
 
 def getTotalEmissions(self):
     return self.totalEmissions
