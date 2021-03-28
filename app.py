@@ -1,38 +1,20 @@
 # This is used to create a local server and allow the frontend to talk with the backend.
 # March 27, 2021 (8:24 pm)
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, jsonify
 
-app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+@app.route ('/geo', methods = ['GET', 'POST'])
+def geo():
+  return render_template ('index.html')
 
-@app.route('/')
-def index():
-  return render_template("index.html") # Reading from the webpage
 
-@app.route('/index', methods =["POST", "GET"])
-def getInfo():
-  if request.method == "POST":
+@app.route('/postmethod', methods = ['GET', 'POST'])
+def get_post_location():
+  where = request.form['location']
+  return where
 
-    # We should be creating a maps and co2 so we can get calculations.
-
-    #loc1 = request.form["start"]    #make name start in field
-    #loc2 = request.form["end"]      #make name end in field
-    #print(loc1 + loc2)
-    
-    # Pulling from the textbox and redirecting to a new screen.
-    user = request.form["nm"] # Request for input from the textbox.
-    return redirect (url_for ("user", usr = user)) # Redirecting to a new screen.
-  else:
-
-    # Otherwise we just load the start screen.
-    return render_template("index.html")
-
-# Testing to see if we can get to the user screen.
-@app.route ("/<usr>")
-def user(usr):
-  return f"<h1>{usrs}</h1>"
-
-# Starting the server.
-if __name__ == "__main__":
-  app.run(debug=True)
+@app.route('/postmethod', methods = ['POST'])
+def postmethod():
+  data=request.get_json()
+  print (data)
+  return jsonify(data)
