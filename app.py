@@ -9,6 +9,12 @@ import maps
 import co2
 import json
 
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+  return render_template ("index.html")
+
 # This method is used to handle post requests.
 @app.route('/postmethod', methods=['POST'])
 def postmethod():
@@ -36,9 +42,8 @@ def postmethod():
   # Creating a json file to be returned.
   return (json.dump(data, indent = 3))
 
-  
-
-
+if __name__ == "__main__":
+  app.run(debug = True)
 
 
 
