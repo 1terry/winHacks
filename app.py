@@ -17,37 +17,7 @@ CORS(app)
 
 @app.route("/")
 def home():
-    # data = {
-    #     "originCoords": {
-    #         "lat": "43.663476",
-    #         "lng": "-79.658687"
-    #     },
-    #     "destinationCoords": {
-    #         "lat": "43.601354",
-    #         "lng": "-79.610622"
-    #     },
-    #     "occupancy": 1,
-    #     "carSize": "SMALL_CAR"
-    # }
-
-    # startLat = data["originCoords"]["lat"]
-    # startLong = data["originCoords"]["lng"]
-    # destLat = data["destinationCoords"]["lat"]
-    # destLong = data["destinationCoords"]["lng"]
-    # passengers = int(data["occupancy"])  # This needs to be an integer value
-    # carSize = data["carSize"]
-
-    # newMap = maps(startLat, startLong, destLat, destLong)
-    # newCO2 = co2(passengers, carSize, newMap)
-
-    # response = {'distance': newMap.getDistance(
-    # ), 'emissions': newCO2.tripEmissions()}
-
-    # print(response)
-
     return "<h1>Welcome to the server</h1>"
-
-# This method is used to handle post requests.
 
 
 @app.route('/post/', methods=['POST', 'GET'])
